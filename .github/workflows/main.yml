@@ -2,37 +2,16 @@ name: GitHub Actions api_rest
 on:
   push:
     branches:
-      - main  # Cambia esto al nombre de tu rama principal si es diferente
-
-jobs:
-  explore-GitHub-Actions:
+      - main 
+jobs :
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip3 install Flask
-        working-directory: ${{ github.workspace }}
-
-      - name: Run Flask app
-        run: |
-          python3 api_calculadora.py
-        working-directory: ${{ github.workspace }}
-
-      - name: Wait for Flask to start
-        run: |
-          sleep 5  # Asegúrate de que Flask tenga tiempo para iniciarse
-        working-directory: ${{ github.workspace }}
-
-      - name: Test API
-        run: |
-          curl -i http://127.0.0.1:5000/suma/4/8 | grep "12"
-        working-directory: ${{ github.workspace }}
+        - name: Checkout
+          uses: actions/checkout@v4.1.1
+        - name: install flask
+          run: pip3 install flask
+        - name: ejecutar app
+          run: python3 api_calculadora.py
+        - name: Probar commando curl
+          run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "{"resultat":12}"
