@@ -1,0 +1,15 @@
+name: GitHub Actions api_rest
+on : [push]
+jobs :
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4.1.1
+        - name: install flask
+          run: pip3 install flask
+        - name: ejecutar app
+          run: python3 api_calculadora.py
+        - name: Probar commando curl
+          run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "{"resultat":12}"
+
