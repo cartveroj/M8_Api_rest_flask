@@ -15,3 +15,5 @@ jobs :
           run: python3 api_calculadora.py & 
         - name: Probar commando curl
           run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "12"
+        - name: Comprobacion de salida
+          run: echo $?
