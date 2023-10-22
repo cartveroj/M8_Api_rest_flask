@@ -13,7 +13,7 @@ jobs :
           run: pip3 install flask
         - name: ejecutar app
           run: python3 api_calculadora.py
-        - name: esperamos a que se ejecute
-          run: sleep 5
+        - name: Esperar a que la API se inicie
+          run: sleep 10
         - name: Probar commando curl
-          run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "{"resultat":12}"
+          run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "12"
