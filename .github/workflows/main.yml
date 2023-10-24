@@ -26,6 +26,6 @@ jobs :
         - name: Comprobacion de salida
           run: echo $?
         - name: Probar commando curl divisio
-          run: curl -i http://127.0.0.1:5000/divisio/10/2 | grep "5"
+          run: curl -i http://127.0.0.1:5000/divideix/10/2 | grep "5"
         - name: Comprobacion de salida
           run: echo $?
