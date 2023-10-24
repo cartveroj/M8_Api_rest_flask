@@ -13,7 +13,19 @@ jobs :
           run: pip3 install flask
         - name: ejecutar app
           run: python3 api_calculadora.py & 
-        - name: Probar commando curl
+        - name: Probar commando curl suma
           run: curl -i http://127.0.0.1:5000/suma/4/8 | grep "12"
+        - name: Comprobacion de salida
+          run: echo $?
+        - name: Probar commando curl resta
+          run: curl -i http://127.0.0.1:5000/resta/5/2 | grep "3"
+        - name: Comprobacion de salida
+          run: echo $?
+        - name: Probar commando curl multiplica
+          run: curl -i http://127.0.0.1:5000/multiplica/5/2 | grep "10"
+        - name: Comprobacion de salida
+          run: echo $?
+        - name: Probar commando curl divisio
+          run: curl -i http://127.0.0.1:5000/divisio/10/2 | grep "5"
         - name: Comprobacion de salida
           run: echo $?
